@@ -1,0 +1,20 @@
+Open Terminal, and enter:
+
+    iwconfig
+
+And note down the wl* number.
+
+
+In Terminal, now run these commands:
+
+    cd Desktop/rtlwifi_new-rock.new_btcoex
+    make
+    sudo make install` type your ubuntu password
+    sudo modprobe -rv rtl8723be
+    sudo modprobe -v rtl8723be ant_sel=2
+    sudo ip link set wl* up` use your **wl* number**
+    sudo iw dev wl* scan` same
+
+To make the settings permanent, use this command:
+
+    echo "options rtl8723be ant_sel=2" | sudo tee /etc/modprobe.d/50-rtl8723be.conf
