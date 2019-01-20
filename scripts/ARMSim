@@ -1,0 +1,2 @@
+#!/bin/sh
+mono ~/workspace/armsim/ARMSim.exe &> ~/workspace/armsim/.ARMSimLogFile

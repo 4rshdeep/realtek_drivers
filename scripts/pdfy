@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cd ~/Downloads/
+
+DATE=`date +%d-%m-%Y`
+
+mkdir -p ~/pdf/$DATE
+shopt -s extglob
+
+for i in *.@(ppt|pptx|ppsx); do
+    [ -f "$i" ] || break
+    echo "Converting $i"
+    libreoffice --headless --invisible --convert-to pdf "$i" &>/dev/null  #--outdir output_dir
+    rm "$i"
+done
+
+for i in *.pdf; do
+    [ -f "$i" ] || break
+    echo "Moving $i"
+    mv "$i" ~/pdf/$DATE
+done
+

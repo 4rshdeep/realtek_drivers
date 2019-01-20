@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+sudo python ~/scripts/unset_proxy.py
+gsettings set org.gnome.system.proxy mode 'none'

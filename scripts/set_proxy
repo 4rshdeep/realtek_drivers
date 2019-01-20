@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo python ~/scripts/set_proxy.py
+gsettings set org.gnome.system.proxy mode 'auto'

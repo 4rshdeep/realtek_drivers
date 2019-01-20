@@ -1,0 +1,5 @@
+#!/bin/bash
+mv ~/$1 ~/scripts
+chmod 777 ~/scripts/$1
+	
+echo "Moved File to ~/scripts, made executable and added to path"

@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Usage epub2pdf filename filename_to_be_created"
+
+name=$(echo "$1" | cut -f 1 -d '.')
+
+echo "$1 -> epub file"
+
+ebook-convert "$1" "$name".pdf
